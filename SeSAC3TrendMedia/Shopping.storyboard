@@ -24,6 +24,9 @@
                                     <rect key="frame" x="20" y="28" width="309" height="18.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="userTextFieldFinished:" destination="hSa-z7-s33" eventType="editingDidEndOnExit" id="rkK-Id-muZ"/>
+                                    </connections>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uP2-YL-WaD">
                                     <rect key="frame" x="349" y="23" width="45" height="28.5"/>
@@ -38,6 +41,9 @@
                                         </backgroundConfiguration>
                                         <fontDescription key="titleFontDescription" type="system" pointSize="0.0"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="userBtnTapped:" destination="hSa-z7-s33" eventType="touchUpInside" id="PBd-JV-0VX"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -68,6 +74,9 @@
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" image="star" catalog="system"/>
                                             <state key="selected" image="star.fill" catalog="system"/>
+                                            <connections>
+                                                <action selector="starTapped:" destination="5C9-bO-8ZZ" eventType="touchUpInside" id="CzR-TM-FDd"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTv-QP-W1N">
                                             <rect key="frame" x="20" y="15.5" width="22" height="22"/>
@@ -80,6 +89,9 @@
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" image="checkmark.square" catalog="system"/>
                                             <state key="selected" image="checkmark.square.fill" catalog="system"/>
+                                            <connections>
+                                                <action selector="checkmarkTapped:" destination="5C9-bO-8ZZ" eventType="touchUpInside" id="umJ-tg-G8e"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0b-4m-lPv">
                                             <rect key="frame" x="62" y="16" width="290" height="21"/>
@@ -113,6 +125,8 @@
                     <navigationItem key="navigationItem" title="쇼핑" id="lGd-qf-DlR"/>
                     <connections>
                         <outlet property="textBannerView" destination="tV3-bK-wed" id="ZxJ-ca-5DW"/>
+                        <outlet property="userBtn" destination="uP2-YL-WaD" id="ie7-Zm-b1k"/>
+                        <outlet property="userTextField" destination="Xgh-BB-xNs" id="0px-mr-RQm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIh-dF-1Sw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

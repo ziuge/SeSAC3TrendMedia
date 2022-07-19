@@ -13,15 +13,31 @@ class ShoppingTableViewCell: UITableViewCell {
     @IBOutlet weak var checkLabel: UILabel!
     @IBOutlet weak var starBtn: UIButton!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//
+//    }
+
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//        // Configure the view for the selected state
+//    }
+    
+    @IBAction func checkmarkTapped(_ sender: UIButton) {
+        if checkBtn.isSelected == true {
+            checkBtn.isSelected = false
+        } else {
+            checkBtn.isSelected = true
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    @IBAction func starTapped(_ sender: UIButton) {
+        if starBtn.isSelected == true {
+            starBtn.isSelected = false
+        } else {
+            starBtn.isSelected = true
+        }
     }
-
+    
 }
