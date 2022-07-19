@@ -16,6 +16,7 @@
 		DE12FFF32884EC4800F57742 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE12FFF22884EC4800F57742 /* Assets.xcassets */; };
 		DE12FFF62884EC4800F57742 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE12FFF42884EC4800F57742 /* LaunchScreen.storyboard */; };
 		DE12FFFE2884F10E00F57742 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE12FFFD2884F10E00F57742 /* Home.storyboard */; };
+		DEBC9E4C28856F3F0081690D /* Setting2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC9E4B28856F3F0081690D /* Setting2TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DE12FFF72884EC4800F57742 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE12FFFD2884F10E00F57742 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		DE12FFFF2884FE3400F57742 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		DEBC9E4B28856F3F0081690D /* Setting2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting2TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				DE12FFEF2884EC4300F57742 /* Main.storyboard */,
 				DE12FFFD2884F10E00F57742 /* Home.storyboard */,
 				DE1200032885341B00F57742 /* Setting.storyboard */,
+				DEBC9E4B28856F3F0081690D /* Setting2TableViewController.swift */,
 				DE12FFFF2884FE3400F57742 /* SettingTableViewController.swift */,
 				DE12FFF22884EC4800F57742 /* Assets.xcassets */,
 				DE12FFF42884EC4800F57742 /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEBC9E4C28856F3F0081690D /* Setting2TableViewController.swift in Sources */,
 				DE1200002884FE3400F57742 /* SettingTableViewController.swift in Sources */,
 				DE12FFEE2884EC4300F57742 /* ViewController.swift in Sources */,
 				DE12FFEA2884EC4300F57742 /* AppDelegate.swift in Sources */,

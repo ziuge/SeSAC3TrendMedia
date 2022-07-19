@@ -90,4 +90,13 @@ class SettingTableViewController: UITableViewController {
         return "푸터"
     }
     
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        
+//    }
+    
+    // 셀의 높이
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
 }
