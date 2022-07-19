@@ -12,10 +12,12 @@
         <scene sceneID="jCR-eX-Woh">
             <objects>
                 <tableViewController id="hSa-z7-s33" customClass="ShoppingTableViewController" customModule="SeSAC3TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="p11-Vz-IyO">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="p11-Vz-IyO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="separatorColor" systemColor="systemGray4Color"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="tV3-bK-wed">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -56,15 +58,22 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingTableViewCell" rowHeight="53" id="5C9-bO-8ZZ" customClass="ShoppingTableViewCell" customModule="SeSAC3TrendMedia" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="118.5" width="414" height="53"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingTableViewCell" rowHeight="67" id="5C9-bO-8ZZ" customClass="ShoppingTableViewCell" customModule="SeSAC3TrendMedia" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="118.5" width="414" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5C9-bO-8ZZ" id="ZdD-IE-Sik">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="53"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObF-bg-JOP">
+                                            <rect key="frame" x="8" y="2" width="398" height="63"/>
+                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="63" id="S1W-9U-VUu"/>
+                                            </constraints>
+                                        </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ShX-hV-CTs">
-                                            <rect key="frame" x="372" y="15.5" width="22" height="22"/>
+                                            <rect key="frame" x="372" y="22.5" width="22" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="5ay-kf-olx"/>
                                                 <constraint firstAttribute="width" secondItem="ShX-hV-CTs" secondAttribute="height" id="XNk-Z9-17l"/>
@@ -79,7 +88,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTv-QP-W1N">
-                                            <rect key="frame" x="20" y="15.5" width="22" height="22"/>
+                                            <rect key="frame" x="20" y="22.5" width="22" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="sTv-QP-W1N" secondAttribute="height" id="WdH-gX-1h0"/>
                                                 <constraint firstAttribute="height" constant="22" id="jVb-to-4Jj"/>
@@ -94,19 +103,23 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0b-4m-lPv">
-                                            <rect key="frame" x="62" y="16" width="290" height="21"/>
+                                            <rect key="frame" x="62" y="23" width="290" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="ObF-bg-JOP" firstAttribute="leading" secondItem="ZdD-IE-Sik" secondAttribute="leading" constant="8" id="755-Z5-kkl"/>
                                         <constraint firstItem="ShX-hV-CTs" firstAttribute="centerY" secondItem="ZdD-IE-Sik" secondAttribute="centerY" id="7IU-Tw-rS3"/>
                                         <constraint firstAttribute="trailing" secondItem="ShX-hV-CTs" secondAttribute="trailing" constant="20" id="NwX-88-InK"/>
                                         <constraint firstItem="sTv-QP-W1N" firstAttribute="leading" secondItem="ZdD-IE-Sik" secondAttribute="leading" constant="20" id="P7u-cm-REi"/>
                                         <constraint firstItem="W0b-4m-lPv" firstAttribute="leading" secondItem="sTv-QP-W1N" secondAttribute="trailing" constant="20" id="S2J-5w-oF4"/>
+                                        <constraint firstAttribute="trailing" secondItem="ObF-bg-JOP" secondAttribute="trailing" constant="8" id="YWT-A3-aWI"/>
+                                        <constraint firstItem="ObF-bg-JOP" firstAttribute="top" secondItem="ZdD-IE-Sik" secondAttribute="top" constant="2" id="Yf9-F0-xKc"/>
                                         <constraint firstItem="ShX-hV-CTs" firstAttribute="leading" secondItem="W0b-4m-lPv" secondAttribute="trailing" constant="20" id="csJ-Pz-40D"/>
                                         <constraint firstItem="sTv-QP-W1N" firstAttribute="centerY" secondItem="ZdD-IE-Sik" secondAttribute="centerY" id="pd5-3e-uFx"/>
+                                        <constraint firstAttribute="bottom" secondItem="ObF-bg-JOP" secondAttribute="bottom" constant="2" id="qyG-0h-QWH"/>
                                         <constraint firstItem="W0b-4m-lPv" firstAttribute="centerY" secondItem="ZdD-IE-Sik" secondAttribute="centerY" id="xQh-2z-Wcu"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -174,6 +187,9 @@
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

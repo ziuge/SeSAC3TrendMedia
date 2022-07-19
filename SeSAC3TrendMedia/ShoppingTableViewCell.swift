@@ -12,6 +12,7 @@ class ShoppingTableViewCell: UITableViewCell {
     @IBOutlet weak var checkBtn: UIButton!
     @IBOutlet weak var checkLabel: UILabel!
     @IBOutlet weak var starBtn: UIButton!
+
     
 //    override func awakeFromNib() {
 //        super.awakeFromNib()
