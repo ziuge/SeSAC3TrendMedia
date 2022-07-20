@@ -34,6 +34,9 @@
 		DEBC9E6A28878CA30081690D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC9E6928878CA30081690D /* Movie.swift */; };
 		DEBC9E6C288795360081690D /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC9E6B288795360081690D /* MovieInfo.swift */; };
 		DEBC9E6E28879AA10081690D /* RecommandCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC9E6D28879AA10081690D /* RecommandCollectionViewController.swift */; };
+		DEBC9E7328879E0D0081690D /* RecommandCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC9E7228879E0D0081690D /* RecommandCollectionViewCell.swift */; };
+		DEBC9E762887AE740081690D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DEBC9E752887AE740081690D /* Kingfisher */; };
+		DEBC9E792887AE810081690D /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = DEBC9E782887AE810081690D /* Toast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,7 @@
 		DEBC9E6928878CA30081690D /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		DEBC9E6B288795360081690D /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 		DEBC9E6D28879AA10081690D /* RecommandCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandCollectionViewController.swift; sourceTree = "<group>"; };
+		DEBC9E7228879E0D0081690D /* RecommandCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEBC9E792887AE810081690D /* Toast in Frameworks */,
+				DEBC9E762887AE740081690D /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +130,7 @@
 			children = (
 				DEBC9E4F288640410081690D /* Trend.storyboard */,
 				DEBC9E6D28879AA10081690D /* RecommandCollectionViewController.swift */,
+				DEBC9E7228879E0D0081690D /* RecommandCollectionViewCell.swift */,
 				DEBC9E5B28864BC50081690D /* BucketListTableViewController.swift */,
 				DEBC9E5D28864D980081690D /* BucketListTableViewCell.swift */,
 				DEBC9E53288643FA0081690D /* TrendViewController.swift */,
@@ -170,6 +177,10 @@
 			dependencies = (
 			);
 			name = SeSAC3TrendMedia;
+			packageProductDependencies = (
+				DEBC9E752887AE740081690D /* Kingfisher */,
+				DEBC9E782887AE810081690D /* Toast */,
+			);
 			productName = SeSAC3TrendMedia;
 			productReference = DE12FFE62884EC4300F57742 /* SeSAC3TrendMedia.app */;
 			productType = "com.apple.product-type.application";
@@ -198,6 +209,10 @@
 				Base,
 			);
 			mainGroup = DE12FFDD2884EC4300F57742;
+			packageReferences = (
+				DEBC9E742887AE740081690D /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				DEBC9E772887AE810081690D /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+			);
 			productRefGroup = DE12FFE72884EC4300F57742 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -241,6 +256,7 @@
 				DEBC9E58288645230081690D /* UIViewController+Extension.swift in Sources */,
 				DEBC9E6A28878CA30081690D /* Movie.swift in Sources */,
 				DEBC9E662886B81B0081690D /* Search2TableViewController.swift in Sources */,
+				DEBC9E7328879E0D0081690D /* RecommandCollectionViewCell.swift in Sources */,
 				DEBC9E4C28856F3F0081690D /* Setting2TableViewController.swift in Sources */,
 				DEBC9E562886440D0081690D /* SearchViewController.swift in Sources */,
 				DE1200002884FE3400F57742 /* SettingTableViewController.swift in Sources */,
@@ -464,6 +480,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DEBC9E742887AE740081690D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		DEBC9E772887AE810081690D /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DEBC9E752887AE740081690D /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEBC9E742887AE740081690D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		DEBC9E782887AE810081690D /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEBC9E772887AE810081690D /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DE12FFDE2884EC4300F57742 /* Project object */;
 }
