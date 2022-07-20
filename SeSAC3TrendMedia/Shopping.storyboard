@@ -58,7 +58,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingTableViewCell" rowHeight="67" id="5C9-bO-8ZZ" customClass="ShoppingTableViewCell" customModule="SeSAC3TrendMedia" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ShoppingTableViewCell" rowHeight="67" id="5C9-bO-8ZZ" customClass="ShoppingTableViewCell" customModule="SeSAC3TrendMedia" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="118.5" width="414" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5C9-bO-8ZZ" id="ZdD-IE-Sik">
