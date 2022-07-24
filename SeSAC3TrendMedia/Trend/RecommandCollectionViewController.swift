@@ -9,16 +9,22 @@ import UIKit
 import Toast
 import Kingfisher
 
-/*
-    
- */
 
 class RecommandCollectionViewController: UICollectionViewController {
+    
+    // 1. 값 전달 - 데이터를 받을 공간(프로퍼티) 생성
+    var movieData: Movie?
+    // 따로따로 프로퍼티 생성하지 않고 하나의 구초제 전체를 전달받는 이유? -> 깔끔하고 효율적임
+    
     
     var imageURL = "https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fmovie-phinf.pstatic.net%2F20220607_129%2F16545872892918GA4h_JPEG%2Fmovie_image.jpg"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 3. 값 전달 - 프로퍼티 값을 뷰에 표현
+        title = movieData?.title
+        
         
         // 컬렉션 뷰의 셀 크기, 셀 사이 간격 등 설정 (Estimate Size -> None으로 설정!)
         let layout = UICollectionViewFlowLayout()

@@ -100,7 +100,7 @@
         <!--Search2 Table View Controller-->
         <scene sceneID="j9E-pc-dPA">
             <objects>
-                <tableViewController id="mG8-1O-YwC" customClass="Search2TableViewController" customModule="SeSAC3TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Search2TableViewController" id="mG8-1O-YwC" customClass="Search2TableViewController" customModule="SeSAC3TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Veq-69-1WD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

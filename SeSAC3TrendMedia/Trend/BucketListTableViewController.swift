@@ -13,6 +13,8 @@ class BucketListTableViewController: UITableViewController {
     
     @IBOutlet weak var userTextField: UITextField!
     var list = ["범죄도시2", "탑건", "토르"]
+    
+    var placeholder: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,8 @@ class BucketListTableViewController: UITableViewController {
 
         tableView.rowHeight = 80
         
+        userTextField.placeholder = "\(placeholder ?? "영화")를 검색해주세요"
+         
         list.append("마녀")
         list.append("aaa")
     }

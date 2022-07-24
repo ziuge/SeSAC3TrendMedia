@@ -14,7 +14,23 @@ class Search2TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "처음으로 돌아가기", style: .plain, target: self, action: #selector(resetBtnClicked))
 
+    }
+    
+    @objc func resetBtnClicked() {
+        
+        // iOS 13+ SceneDelegate 쓸 때 동작하는 코드
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        
+        let sb = UIStoryboard(name: "Trend", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        
+        sceneDelegate?.window?.rootViewController = vc
+        sceneDelegate?.window?.makeKeyAndVisible()
+        
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,6 +56,13 @@ class Search2TableViewController: UITableViewController {
         print("didSelectRowAt")
         let sb = UIStoryboard(name: "Trend", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "RecommandCollectionViewController") as! RecommandCollectionViewController
+        
+        // 2. 값 전달 - vc가 가지고 있는 프로퍼티에 데이터 넣기
+//        let title = movieList.movie[indexPath.row].title
+//        let release = movieList.movie[indexPath.row].releaseDate
+//        vc.movieTitle = "\(title)(\(release)) "
+        vc.movieData = movieList.movie[indexPath.row]
+        
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
