@@ -17,22 +17,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // 첫 화면인지 여부 저장하기 -> 다른 화면에 배치해야 함.
 //        UserDefaults.standard.set(false, forKey: "First") // true -> ViewController, false -> Search2TableViewController
         
-        guard let scene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(windowScene: scene)
-        
-        if UserDefaults.standard.bool(forKey: "First") {
-            let sb = UIStoryboard(name: "Trend", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-            
-            window?.rootViewController = vc
-            
-        } else {
-            let sb = UIStoryboard(name: "Search", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "Search2TableViewController") as! Search2TableViewController
-            
-            window?.rootViewController = UINavigationController(rootViewController: vc)
-        }
-        window?.makeKeyAndVisible()
+//        guard let scene = (scene as? UIWindowScene) else { return }
+//        window = UIWindow(windowScene: scene)
+//        
+//        if UserDefaults.standard.bool(forKey: "First") {
+//            let sb = UIStoryboard(name: "Trend", bundle: nil)
+//            let vc = sb.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//            
+//            window?.rootViewController = vc
+//            
+//        } else {
+//            let sb = UIStoryboard(name: "Search", bundle: nil)
+//            let vc = sb.instantiateViewController(withIdentifier: "Search2TableViewController") as! Search2TableViewController
+//            
+//            window?.rootViewController = UINavigationController(rootViewController: vc)
+//        }
+//        window?.makeKeyAndVisible()
         
         
     }
