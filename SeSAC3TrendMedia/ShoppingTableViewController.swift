@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ShoppingTableViewController: UITableViewController {
+    
+    let localRealm = try! Realm()
     
     var shoppingList: [String] = ["그립톡 구매하기", "사이다 구매", "아이패드 케이스 알아보기", "양말"]
     
@@ -15,11 +18,26 @@ class ShoppingTableViewController: UITableViewController {
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var userBtn: UIButton!
     
+    var lists: Results<UserShoppingList>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        lists = localRealm.objects(UserShoppingList.self).sorted(byKeyPath: "date", ascending: true)
+        
         textBannerView.layer.cornerRadius = 10
         
+        print("Realm is located at:", localRealm.configuration.fileURL!)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
+    @objc func addItem() {
+        print("additem")
     }
 
     @IBAction func userTextFieldFinished(_ sender: UITextField) {
@@ -34,17 +52,14 @@ class ShoppingTableViewController: UITableViewController {
             shoppingList.append(userTextField.text!)
         }
         
+        addItem()
+        
         tableView.reloadData()
         userTextField.text = ""
         userTextField.endEditing(true)
     }
     
     // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//
-//        return 0
-//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         

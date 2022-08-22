@@ -33,15 +33,11 @@ enum SettingOptions: Int, CaseIterable {
 
 class Setting2TableViewController: UITableViewController {
     
-    var settingArray = [["공지사항", "실험실", "버전 정보"], ["개인/보안", "알림", "채팅", "멀티프로필"], ["고객센터/도움말"]]
+//    var settingArray = [["공지사항", "실험실", "버전 정보"], ["개인/보안", "알림", "채팅", "멀티프로필"], ["고객센터/도움말"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        print(SettingOptions.allCases.count) // 3
-//        print(SettingOptions.allCases[0]) // total
-//        print(SettingOptions.allCases[1].sectionTitle) // personal > 개인 설정
-//        print(SettingOptions.allCases[2].rowTitle) // others > ["고객센터/도움말"]
+
     }
 
     // MARK: - Table view data source

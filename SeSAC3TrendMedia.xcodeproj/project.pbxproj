@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE038DAD28B39C25002B1181 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DE038DAC28B39C25002B1181 /* Realm */; };
+		DE038DAF28B39C25002B1181 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DE038DAE28B39C25002B1181 /* RealmSwift */; };
+		DE038DB128B3A035002B1181 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE038DB028B3A035002B1181 /* RealmModel.swift */; };
 		DE1200002884FE3400F57742 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12FFFF2884FE3400F57742 /* SettingTableViewController.swift */; };
 		DE1200042885341B00F57742 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE1200032885341B00F57742 /* Setting.storyboard */; };
 		DE12FFEA2884EC4300F57742 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE12FFE92884EC4300F57742 /* AppDelegate.swift */; };
@@ -41,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE038DB028B3A035002B1181 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		DE1200032885341B00F57742 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		DE12FFE62884EC4300F57742 /* SeSAC3TrendMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC3TrendMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE12FFE92884EC4300F57742 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE038DAF28B39C25002B1181 /* RealmSwift in Frameworks */,
+				DE038DAD28B39C25002B1181 /* Realm in Frameworks */,
 				DEBC9E792887AE810081690D /* Toast in Frameworks */,
 				DEBC9E762887AE740081690D /* Kingfisher in Frameworks */,
 			);
@@ -119,6 +125,7 @@
 				DEBC9E59288647850081690D /* UITextField+Extension.swift */,
 				DEBC9E5F288690140081690D /* Shopping.storyboard */,
 				DEBC9E6128869E9F0081690D /* ShoppingTableViewController.swift */,
+				DE038DB028B3A035002B1181 /* RealmModel.swift */,
 				DEBC9E6328869ECA0081690D /* ShoppingTableViewCell.swift */,
 				DE12FFF22884EC4800F57742 /* Assets.xcassets */,
 				DE12FFF42884EC4800F57742 /* LaunchScreen.storyboard */,
@@ -183,6 +190,8 @@
 			packageProductDependencies = (
 				DEBC9E752887AE740081690D /* Kingfisher */,
 				DEBC9E782887AE810081690D /* Toast */,
+				DE038DAC28B39C25002B1181 /* Realm */,
+				DE038DAE28B39C25002B1181 /* RealmSwift */,
 			);
 			productName = SeSAC3TrendMedia;
 			productReference = DE12FFE62884EC4300F57742 /* SeSAC3TrendMedia.app */;
@@ -215,6 +224,7 @@
 			packageReferences = (
 				DEBC9E742887AE740081690D /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				DEBC9E772887AE810081690D /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				DE038DAB28B39C24002B1181 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = DE12FFE72884EC4300F57742 /* Products */;
 			projectDirPath = "";
@@ -250,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEBC9E6C288795360081690D /* MovieInfo.swift in Sources */,
+				DE038DB128B3A035002B1181 /* RealmModel.swift in Sources */,
 				DEBC9E5A288647850081690D /* UITextField+Extension.swift in Sources */,
 				DEBC9E6428869ECA0081690D /* ShoppingTableViewCell.swift in Sources */,
 				DEBC9E6228869E9F0081690D /* ShoppingTableViewController.swift in Sources */,
@@ -419,7 +430,7 @@
 				INFOPLIST_FILE = SeSAC3TrendMedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Home;
+				INFOPLIST_KEY_UIMainStoryboardFile = Shopping;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -446,7 +457,7 @@
 				INFOPLIST_FILE = SeSAC3TrendMedia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Home;
+				INFOPLIST_KEY_UIMainStoryboardFile = Shopping;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -486,6 +497,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DE038DAB28B39C24002B1181 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 		DEBC9E742887AE740081690D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -505,6 +524,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DE038DAC28B39C25002B1181 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE038DAB28B39C24002B1181 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		DE038DAE28B39C25002B1181 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE038DAB28B39C24002B1181 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		DEBC9E752887AE740081690D /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DEBC9E742887AE740081690D /* XCRemoteSwiftPackageReference "Kingfisher" */;
