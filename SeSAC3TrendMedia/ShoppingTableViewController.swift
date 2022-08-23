@@ -106,5 +106,31 @@ class ShoppingTableViewController: UITableViewController {
         return UISwipeActionsConfiguration(actions: [favorite])
         
     }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .normal, title: nil) { action, view, completionHandler in
+            print("delete button clicked")
+            
+            try! self.localRealm.write {
+                self.lists.realm?.delete(self.lists[indexPath.row])
+            }
+            self.fetchRealm()
+        }
+        
+        let edit = UIContextualAction(style: .normal, title: nil) { action, view, completionHandler in
+            print("edit button clicked")
+            
+            try! self.localRealm.write {
+                self.lists[indexPath.row].name = "edited"
+            }
+            self.fetchRealm()
+        }
+        
+        delete.image = UIImage(systemName: "trash")
+        edit.image = UIImage(systemName: "pencil")
+        
+        
+        return UISwipeActionsConfiguration(actions: [edit, delete])
+    }
 
 }
