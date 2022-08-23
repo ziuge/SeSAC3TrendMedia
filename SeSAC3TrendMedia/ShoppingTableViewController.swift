@@ -18,7 +18,12 @@ class ShoppingTableViewController: UITableViewController {
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var userBtn: UIButton!
     
-    var lists: Results<UserShoppingList>!
+    var lists: Results<UserShoppingList>! {
+        didSet {
+            tableView.reloadData()
+            print("reload success")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,21 +32,23 @@ class ShoppingTableViewController: UITableViewController {
         
         textBannerView.layer.cornerRadius = 10
         
-        print("Realm is located at:", localRealm.configuration.fileURL!)
+//        print("Realm is located at:", localRealm.configuration.fileURL!)
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        lists = localRealm.objects(UserShoppingList.self).sorted(byKeyPath: "date", ascending: true)
-        tableView.reloadData()
+        fetchRealm()
     }
 
+    func fetchRealm() {
+        lists = localRealm.objects(UserShoppingList.self).sorted(byKeyPath: "date", ascending: true)
+    }
     
-    @objc func addItem() {
+    @objc func addItem(name: String) {
         print("additem")
-        let list = UserShoppingList(name: "item\(Int.random(in: 1...1000))", date: Date(), check: "", favorite: "")
+        let list = UserShoppingList(name: name, date: Date(), check: false, favorite: false)
         
         try! localRealm.write {
             localRealm.add(list)
@@ -50,20 +57,16 @@ class ShoppingTableViewController: UITableViewController {
     }
 
     @IBAction func userTextFieldFinished(_ sender: UITextField) {
-        shoppingList.append(userTextField.text!)
+        guard let name = userTextField.text else { return }
+        addItem(name: name)
         
-        tableView.reloadData()
         userTextField.text = ""
     }
     
     @IBAction func userBtnTapped(_ sender: UIButton) {
-        if userTextField.text != nil {
-            shoppingList.append(userTextField.text!)
-        }
-        
-        addItem()
-        
-        tableView.reloadData()
+        guard let name = userTextField.text else { return }
+        addItem(name: name)
+        fetchRealm()
         userTextField.text = ""
         userTextField.endEditing(true)
     }
@@ -71,7 +74,6 @@ class ShoppingTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return lists.count
     }
     
@@ -85,16 +87,24 @@ class ShoppingTableViewController: UITableViewController {
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
-//
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//
-//        if editingStyle == .delete {
-//            lists.remove(at: indexPath.row)
-//            tableView.reloadData()
-//        }
-//    }
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let favorite = UIContextualAction(style: .normal, title: nil) { action, view, completionHandler in
+            
+            // realm data update
+            try! self.localRealm.write {
+                // 하나의 레코드에서 특정 컬럼 하나만 변경
+                self.lists[indexPath.row].favorite = !self.lists[indexPath.row].favorite
+            }
+            
+            self.fetchRealm()
+        }
+        
+        let image = lists[indexPath.row].favorite ? "star.fill" : "star"
+        favorite.image = UIImage(systemName: image)
+        favorite.backgroundColor = .systemYellow
+        
+        return UISwipeActionsConfiguration(actions: [favorite])
+        
+    }
 
 }

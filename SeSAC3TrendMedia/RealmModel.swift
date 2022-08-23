@@ -17,7 +17,7 @@ class UserShoppingList: Object {
     // PK(필수): Int, String(부적합), UUID, ObjectID
     @Persisted(primaryKey: true) var objectId: ObjectId
     
-    convenience init(name: String, date: Date, check: String, favorite: String) {
+    convenience init(name: String, date: Date, check: Bool, favorite: Bool) {
         self.init()
         self.name = name
         self.date = date
