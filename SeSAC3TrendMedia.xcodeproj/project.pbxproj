@@ -19,6 +19,14 @@
 		DE12FFF32884EC4800F57742 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE12FFF22884EC4800F57742 /* Assets.xcassets */; };
 		DE12FFF62884EC4800F57742 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE12FFF42884EC4800F57742 /* LaunchScreen.storyboard */; };
 		DE12FFFE2884F10E00F57742 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE12FFFD2884F10E00F57742 /* Home.storyboard */; };
+		DE27838028B65C1400D11E0A /* ImagePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27837F28B65C1400D11E0A /* ImagePickViewController.swift */; };
+		DE27838228B65C5800D11E0A /* ImagePickCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27838128B65C5800D11E0A /* ImagePickCollectionViewCell.swift */; };
+		DE27838528B65C9B00D11E0A /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27838428B65C9B00D11E0A /* BaseView.swift */; };
+		DE27838728B65CB400D11E0A /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27838628B65CB400D11E0A /* BaseCollectionViewCell.swift */; };
+		DE27838A28B65CD000D11E0A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DE27838928B65CD000D11E0A /* SnapKit */; };
+		DE27838C28B65CE500D11E0A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27838B28B65CE500D11E0A /* BaseViewController.swift */; };
+		DE27838E28B65D2D00D11E0A /* ImagePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27838D28B65D2D00D11E0A /* ImagePickView.swift */; };
+		DE27839028B67FB200D11E0A /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27838F28B67FB200D11E0A /* Images.swift */; };
 		DE8B44F82888E74D00A45E21 /* TrendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B44F72888E74D00A45E21 /* TrendTableViewController.swift */; };
 		DEBC9E4C28856F3F0081690D /* Setting2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC9E4B28856F3F0081690D /* Setting2TableViewController.swift */; };
 		DEBC9E4E2886400C0081690D /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC9E4D2886400C0081690D /* Search.storyboard */; };
@@ -56,6 +64,13 @@
 		DE12FFF72884EC4800F57742 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE12FFFD2884F10E00F57742 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		DE12FFFF2884FE3400F57742 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		DE27837F28B65C1400D11E0A /* ImagePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickViewController.swift; sourceTree = "<group>"; };
+		DE27838128B65C5800D11E0A /* ImagePickCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE27838428B65C9B00D11E0A /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		DE27838628B65CB400D11E0A /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE27838B28B65CE500D11E0A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		DE27838D28B65D2D00D11E0A /* ImagePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickView.swift; sourceTree = "<group>"; };
+		DE27838F28B67FB200D11E0A /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		DE8B44F72888E74D00A45E21 /* TrendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewController.swift; sourceTree = "<group>"; };
 		DEBC9E4B28856F3F0081690D /* Setting2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting2TableViewController.swift; sourceTree = "<group>"; };
 		DEBC9E4D2886400C0081690D /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -87,6 +102,7 @@
 				DE038DAD28B39C25002B1181 /* Realm in Frameworks */,
 				DEBC9E792887AE810081690D /* Toast in Frameworks */,
 				DEBC9E762887AE740081690D /* Kingfisher in Frameworks */,
+				DE27838A28B65CD000D11E0A /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,17 +137,48 @@
 				DEBC9E7028879AB50081690D /* Search */,
 				DEBC9E6F28879AB00081690D /* Trend */,
 				DEBC9E51288640740081690D /* Intro.storyboard */,
+				DE27837D28B65B6000D11E0A /* Extension */,
+				DE27837E28B65B6B00D11E0A /* ShoppingList */,
+				DE12FFF22884EC4800F57742 /* Assets.xcassets */,
+				DE12FFF42884EC4800F57742 /* LaunchScreen.storyboard */,
+				DE12FFF72884EC4800F57742 /* Info.plist */,
+				DE27838328B65C9200D11E0A /* Base */,
+			);
+			path = SeSAC3TrendMedia;
+			sourceTree = "<group>";
+		};
+		DE27837D28B65B6000D11E0A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
 				DEBC9E57288645230081690D /* UIViewController+Extension.swift */,
 				DEBC9E59288647850081690D /* UITextField+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		DE27837E28B65B6B00D11E0A /* ShoppingList */ = {
+			isa = PBXGroup;
+			children = (
 				DEBC9E5F288690140081690D /* Shopping.storyboard */,
 				DEBC9E6128869E9F0081690D /* ShoppingTableViewController.swift */,
 				DE038DB028B3A035002B1181 /* RealmModel.swift */,
 				DEBC9E6328869ECA0081690D /* ShoppingTableViewCell.swift */,
-				DE12FFF22884EC4800F57742 /* Assets.xcassets */,
-				DE12FFF42884EC4800F57742 /* LaunchScreen.storyboard */,
-				DE12FFF72884EC4800F57742 /* Info.plist */,
+				DE27837F28B65C1400D11E0A /* ImagePickViewController.swift */,
+				DE27838D28B65D2D00D11E0A /* ImagePickView.swift */,
+				DE27838128B65C5800D11E0A /* ImagePickCollectionViewCell.swift */,
+				DE27838F28B67FB200D11E0A /* Images.swift */,
 			);
-			path = SeSAC3TrendMedia;
+			path = ShoppingList;
+			sourceTree = "<group>";
+		};
+		DE27838328B65C9200D11E0A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				DE27838428B65C9B00D11E0A /* BaseView.swift */,
+				DE27838B28B65CE500D11E0A /* BaseViewController.swift */,
+				DE27838628B65CB400D11E0A /* BaseCollectionViewCell.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		DEBC9E6F28879AB00081690D /* Trend */ = {
@@ -192,6 +239,7 @@
 				DEBC9E782887AE810081690D /* Toast */,
 				DE038DAC28B39C25002B1181 /* Realm */,
 				DE038DAE28B39C25002B1181 /* RealmSwift */,
+				DE27838928B65CD000D11E0A /* SnapKit */,
 			);
 			productName = SeSAC3TrendMedia;
 			productReference = DE12FFE62884EC4300F57742 /* SeSAC3TrendMedia.app */;
@@ -225,6 +273,7 @@
 				DEBC9E742887AE740081690D /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				DEBC9E772887AE810081690D /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				DE038DAB28B39C24002B1181 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				DE27838828B65CD000D11E0A /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = DE12FFE72884EC4300F57742 /* Products */;
 			projectDirPath = "";
@@ -269,16 +318,23 @@
 				DEBC9E5C28864BC50081690D /* BucketListTableViewController.swift in Sources */,
 				DEBC9E58288645230081690D /* UIViewController+Extension.swift in Sources */,
 				DEBC9E6A28878CA30081690D /* Movie.swift in Sources */,
+				DE27838228B65C5800D11E0A /* ImagePickCollectionViewCell.swift in Sources */,
 				DE8B44F82888E74D00A45E21 /* TrendTableViewController.swift in Sources */,
 				DEBC9E662886B81B0081690D /* Search2TableViewController.swift in Sources */,
+				DE27838C28B65CE500D11E0A /* BaseViewController.swift in Sources */,
 				DEBC9E7328879E0D0081690D /* RecommandCollectionViewCell.swift in Sources */,
 				DEBC9E4C28856F3F0081690D /* Setting2TableViewController.swift in Sources */,
+				DE27838728B65CB400D11E0A /* BaseCollectionViewCell.swift in Sources */,
+				DE27838528B65C9B00D11E0A /* BaseView.swift in Sources */,
 				DEBC9E562886440D0081690D /* SearchViewController.swift in Sources */,
+				DE27838E28B65D2D00D11E0A /* ImagePickView.swift in Sources */,
 				DE1200002884FE3400F57742 /* SettingTableViewController.swift in Sources */,
+				DE27839028B67FB200D11E0A /* Images.swift in Sources */,
 				DE12FFEE2884EC4300F57742 /* ViewController.swift in Sources */,
 				DE12FFEA2884EC4300F57742 /* AppDelegate.swift in Sources */,
 				DEBC9E54288643FA0081690D /* TrendViewController.swift in Sources */,
 				DE12FFEC2884EC4300F57742 /* SceneDelegate.swift in Sources */,
+				DE27838028B65C1400D11E0A /* ImagePickViewController.swift in Sources */,
 				DEBC9E682886B8CF0081690D /* Search2TableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +561,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		DE27838828B65CD000D11E0A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		DEBC9E742887AE740081690D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -533,6 +597,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DE038DAB28B39C24002B1181 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		DE27838928B65CD000D11E0A /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE27838828B65CD000D11E0A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 		DEBC9E752887AE740081690D /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;

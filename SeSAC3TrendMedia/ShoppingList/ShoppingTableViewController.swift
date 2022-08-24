@@ -103,7 +103,14 @@ class ShoppingTableViewController: UITableViewController {
         favorite.image = UIImage(systemName: image)
         favorite.backgroundColor = .systemYellow
         
-        return UISwipeActionsConfiguration(actions: [favorite])
+        let pickImage = UIContextualAction(style: .normal, title: nil) { action, view, completionHandler in
+            let vc = ImagePickViewController()
+            self.present(vc, animated: true)
+        }
+        
+        pickImage.image = UIImage(systemName: "camera.fill")
+        
+        return UISwipeActionsConfiguration(actions: [favorite, pickImage])
         
     }
     
