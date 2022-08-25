@@ -71,21 +71,21 @@ extension ImagePickViewController: UICollectionViewDelegate, UICollectionViewDat
             return UICollectionViewCell()
         }
 
-//        cell.setImage(data: ImageDummy.data[indexPath.item].url)
+        cell.setImage(data: ImageDummy.data[indexPath.item].url)
 
         return cell
     }
 
     // userInteractionEnabled & progress loading 보여주기
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        // 어떤 셀인지 어떤 이미지를 가지고 올 지 어떻게 알지??
-        guard let cell = collectionView.cellForItem(at: indexPath) as? ImagePickCollectionViewCell else { return }
-        
-//        selectImage = cell.searchImageView.image
-
-        collectionView.reloadData()
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//
+//        // 어떤 셀인지 어떤 이미지를 가지고 올 지 어떻게 알지??
+//        guard let cell = collectionView.cellForItem(at: indexPath) as? ImagePickCollectionViewCell else { return }
+//
+////        selectImage = cell.searchImageView.image
+//
+//        collectionView.reloadData()
+//    }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         selectImage = nil

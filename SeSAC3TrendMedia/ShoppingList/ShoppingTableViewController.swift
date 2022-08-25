@@ -104,6 +104,7 @@ class ShoppingTableViewController: UITableViewController {
         favorite.backgroundColor = .systemYellow
         
         let pickImage = UIContextualAction(style: .normal, title: nil) { action, view, completionHandler in
+            print("pickImage")
             let vc = ImagePickViewController()
             self.present(vc, animated: true)
         }
