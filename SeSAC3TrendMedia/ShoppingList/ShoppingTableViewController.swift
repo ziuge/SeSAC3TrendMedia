@@ -101,6 +101,13 @@ class ShoppingTableViewController: UITableViewController {
         }
     }
     
+    func detailClicked(indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.index = indexPath.row
+        navigationController?.pushViewController(vc, animated: true)
+        print(indexPath)
+    }
+    
     
     // MARK: - Table view data source
 
@@ -119,7 +126,7 @@ class ShoppingTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        detailClicked(indexPath: indexPath)
     }
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
