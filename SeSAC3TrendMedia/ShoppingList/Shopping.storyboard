@@ -134,8 +134,15 @@
                             <outlet property="delegate" destination="hSa-z7-s33" id="d6e-HW-yqw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="쇼핑" id="lGd-qf-DlR"/>
+                    <navigationItem key="navigationItem" title="쇼핑" id="lGd-qf-DlR">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="jgb-Et-JQ7">
+                            <connections>
+                                <action selector="sortBtnTapped:" destination="hSa-z7-s33" id="9vY-nH-f2W"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="sortButton" destination="jgb-Et-JQ7" id="9iu-V7-ELa"/>
                         <outlet property="textBannerView" destination="tV3-bK-wed" id="ZxJ-ca-5DW"/>
                         <outlet property="userBtn" destination="uP2-YL-WaD" id="ie7-Zm-b1k"/>
                         <outlet property="userTextField" destination="Xgh-BB-xNs" id="0px-mr-RQm"/>

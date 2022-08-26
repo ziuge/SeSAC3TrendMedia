@@ -17,16 +17,18 @@ class ShoppingTableViewController: UITableViewController {
     @IBOutlet weak var textBannerView: UIView!
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var userBtn: UIButton!
+    @IBOutlet weak var sortButton: UIBarButtonItem!
     
     var lists: Results<UserShoppingList>! {
         didSet {
             tableView.reloadData()
-            print("reload success")
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sortButton.title = "정렬"
         
         lists = localRealm.objects(UserShoppingList.self).sorted(byKeyPath: "date", ascending: true)
         
@@ -71,6 +73,35 @@ class ShoppingTableViewController: UITableViewController {
         userTextField.endEditing(true)
     }
     
+    @IBAction func sortBtnTapped(_ sender: UIBarButtonItem) {
+        print("== sort")
+        showAlertController(style: .actionSheet)
+    }
+    
+    func showAlertController(style: UIAlertController.Style) {
+        let alertController: UIAlertController
+        alertController = UIAlertController(title: "정렬", message: "message", preferredStyle: style)
+        
+        let name = UIAlertAction(title: "제목으로 정렬", style: .default) { UIAlertAction in
+            self.lists = self.localRealm.objects(UserShoppingList.self).sorted(byKeyPath: "name", ascending: true)
+        }
+        let date = UIAlertAction(title: "날짜로 정렬", style: .default) { UIAlertAction in
+            self.lists = self.localRealm.objects(UserShoppingList.self).sorted(byKeyPath: "date", ascending: true)
+        }
+        let check = UIAlertAction(title: "체크로 정렬", style: .default) { UIAlertAction in
+            self.lists = self.localRealm.objects(UserShoppingList.self).sorted(byKeyPath: "check", ascending: true)
+        }
+        
+        alertController.addAction(name)
+        alertController.addAction(date)
+        alertController.addAction(check)
+        
+        self.present(alertController, animated: true) {
+            print("alert controller shown")
+        }
+    }
+    
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -85,6 +116,10 @@ class ShoppingTableViewController: UITableViewController {
         cell.checkLabel.font = .boldSystemFont(ofSize: 12)
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
