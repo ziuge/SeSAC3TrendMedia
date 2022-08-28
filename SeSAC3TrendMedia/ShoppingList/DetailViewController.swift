@@ -8,11 +8,19 @@
 import UIKit
 import RealmSwift
 
+protocol SelectImageDelegate {
+    func sendImageData(image: UIImage)
+}
+
 class DetailViewController: BaseViewController {
+    
+    let repository = UserShoppingListRepository()
     
     let mainView = DetailView()
     let localRealm = try! Realm()
-    var index = 0
+    
+    var lists: Results<UserShoppingList>!
+    var list: UserShoppingList!
     
     override func loadView() {
         self.view = mainView
@@ -21,25 +29,26 @@ class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        print(#function, self)
     }
     
     override func configure() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonClicked(item: lists[index])))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonClicked))
     }
     
-    @objc func saveButtonClicked(item: UserShoppingList) {
+    @objc func saveButtonClicked() {
         guard let title = mainView.titleTextField.text else {
-            showAlertMessage(title: "내용을 입력해주세요", button: "확인")
+            showAlertMessage(title: "제목을 입력해주세요", button: "확인")
             return
         }
-        
-        try! self.localRealm.write {
-            item.name = "1"
-        }
-        
+//        repository.addItem(item: UserShoppingList(name: title, date: Date(), check: false, favorite: false))
+        repository.updateTitle(item: list, title: title)
         dismiss(animated: true)
     }
-    
-    
+}
+
+extension DetailViewController: SelectImageDelegate {
+    func sendImageData(image: UIImage) {
+        mainView.imageView.image = image
+        print(#function)
+    }
 }

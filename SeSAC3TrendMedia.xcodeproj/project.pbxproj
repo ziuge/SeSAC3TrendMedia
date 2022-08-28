@@ -30,6 +30,7 @@
 		DE7A23EE28B90D5100505EEE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7A23ED28B90D5100505EEE /* DetailViewController.swift */; };
 		DE7A23F028B90D7100505EEE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7A23EF28B90D7100505EEE /* DetailView.swift */; };
 		DE8B44F82888E74D00A45E21 /* TrendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B44F72888E74D00A45E21 /* TrendTableViewController.swift */; };
+		DE8C869828BBA55F0011B835 /* UserShoppingListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C869728BBA55F0011B835 /* UserShoppingListRepository.swift */; };
 		DEBC9E4C28856F3F0081690D /* Setting2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC9E4B28856F3F0081690D /* Setting2TableViewController.swift */; };
 		DEBC9E4E2886400C0081690D /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC9E4D2886400C0081690D /* Search.storyboard */; };
 		DEBC9E50288640410081690D /* Trend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC9E4F288640410081690D /* Trend.storyboard */; };
@@ -76,6 +77,7 @@
 		DE7A23ED28B90D5100505EEE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DE7A23EF28B90D7100505EEE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		DE8B44F72888E74D00A45E21 /* TrendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewController.swift; sourceTree = "<group>"; };
+		DE8C869728BBA55F0011B835 /* UserShoppingListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserShoppingListRepository.swift; sourceTree = "<group>"; };
 		DEBC9E4B28856F3F0081690D /* Setting2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting2TableViewController.swift; sourceTree = "<group>"; };
 		DEBC9E4D2886400C0081690D /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		DEBC9E4F288640410081690D /* Trend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trend.storyboard; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				DE27838D28B65D2D00D11E0A /* ImagePickView.swift */,
 				DE27838128B65C5800D11E0A /* ImagePickCollectionViewCell.swift */,
 				DE27838F28B67FB200D11E0A /* Images.swift */,
+				DE8C869728BBA55F0011B835 /* UserShoppingListRepository.swift */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				DEBC9E5E28864D980081690D /* BucketListTableViewCell.swift in Sources */,
 				DEBC9E6E28879AA10081690D /* RecommandCollectionViewController.swift in Sources */,
 				DEBC9E5C28864BC50081690D /* BucketListTableViewController.swift in Sources */,
+				DE8C869828BBA55F0011B835 /* UserShoppingListRepository.swift in Sources */,
 				DEBC9E58288645230081690D /* UIViewController+Extension.swift in Sources */,
 				DE7A23EE28B90D5100505EEE /* DetailViewController.swift in Sources */,
 				DEBC9E6A28878CA30081690D /* Movie.swift in Sources */,

@@ -12,7 +12,7 @@ class ShoppingTableViewController: UITableViewController {
     
     let localRealm = try! Realm()
     
-    var shoppingList: [String] = ["그립톡 구매하기", "사이다 구매", "아이패드 케이스 알아보기", "양말"]
+//    var shoppingList: [String] = ["그립톡 구매하기", "사이다 구매", "아이패드 케이스 알아보기", "양말"]
     
     @IBOutlet weak var textBannerView: UIView!
     @IBOutlet weak var userTextField: UITextField!
@@ -89,25 +89,25 @@ class ShoppingTableViewController: UITableViewController {
             self.lists = self.localRealm.objects(UserShoppingList.self).sorted(byKeyPath: "date", ascending: true)
         }
         let check = UIAlertAction(title: "체크로 정렬", style: .default) { UIAlertAction in
-            self.lists = self.localRealm.objects(UserShoppingList.self).sorted(byKeyPath: "check", ascending: true)
+            self.lists = self.localRealm.objects(UserShoppingList.self).filter("check == false")
+//            self.lists = self.localRealm.objects(UserShoppingList.self).sorted(byKeyPath: "check", ascending: true)
         }
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         
         alertController.addAction(name)
         alertController.addAction(date)
         alertController.addAction(check)
+        alertController.addAction(cancel)
         
-        self.present(alertController, animated: true) {
-            print("alert controller shown")
-        }
+        self.present(alertController, animated: true)
+        
     }
     
     func detailClicked(indexPath: IndexPath) {
         let vc = DetailViewController()
-        vc.index = indexPath.row
+        vc.list = lists[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
-        print(indexPath)
     }
-    
     
     // MARK: - Table view data source
 
