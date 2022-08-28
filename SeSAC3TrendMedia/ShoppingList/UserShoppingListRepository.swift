@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 protocol UserDiaryRepositoryType {
-    func updateTitle(item: UserShoppingList, title: String)
+    func updateItem(item: UserShoppingList, title: String, photo: String)
 }
 
 class UserShoppingListRepository {
@@ -21,9 +21,10 @@ class UserShoppingListRepository {
         })
     }
     
-    func updateTitle(item: UserShoppingList, title: String) {
+    func updateItem(item: UserShoppingList, title: String, photo: String) {
         try! localRealm.write({
             item.name = title
+            item.photo = photo
         })
     }
 }

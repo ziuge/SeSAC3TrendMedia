@@ -13,16 +13,18 @@ class UserShoppingList: Object {
     @Persisted var date: Date
     @Persisted var check: Bool // 체크 필수
     @Persisted var favorite: Bool // 즐겨찾기 필수
+    @Persisted var photo: String? // 사진 옵션
     
     // PK(필수): Int, String(부적합), UUID, ObjectID
     @Persisted(primaryKey: true) var objectId: ObjectId
     
-    convenience init(name: String, date: Date, check: Bool, favorite: Bool) {
+    convenience init(name: String, date: Date, check: Bool, favorite: Bool, photo: String) {
         self.init()
         self.name = name
         self.date = date
         self.check = false
         self.favorite = false
+        self.photo = photo
     }
     
 }

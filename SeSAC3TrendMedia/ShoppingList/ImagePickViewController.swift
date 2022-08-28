@@ -22,7 +22,7 @@ class ImagePickViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = .black
+        view.backgroundColor = .black
     }
     
     override func configure() {
@@ -36,7 +36,6 @@ class ImagePickViewController: BaseViewController {
         let saveButton = UIBarButtonItem(title: "선택", style: .plain, target: self, action: #selector(selectButtonClicked))
         navigationItem.rightBarButtonItem = saveButton
         
-//        view.isUserInteractionEnabled = false
     }
     
     @objc func closeButtonClicked() {
@@ -67,7 +66,7 @@ extension ImagePickViewController: UICollectionViewDelegate, UICollectionViewDat
         }
 
         cell.layer.borderWidth = selectIndexPath == indexPath ? 4 : 0
-        cell.layer.borderColor = selectIndexPath == indexPath ? UIColor.systemRed.cgColor : nil
+        cell.layer.borderColor = selectIndexPath == indexPath ? UIColor.systemBlue.cgColor : nil
         cell.setImage(data: ImageDummy.data[indexPath.item].url)
 
         return cell

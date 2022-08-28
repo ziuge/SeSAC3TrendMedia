@@ -12,8 +12,6 @@ class ShoppingTableViewController: UITableViewController {
     
     let localRealm = try! Realm()
     
-//    var shoppingList: [String] = ["그립톡 구매하기", "사이다 구매", "아이패드 케이스 알아보기", "양말"]
-    
     @IBOutlet weak var textBannerView: UIView!
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var userBtn: UIButton!
@@ -50,7 +48,7 @@ class ShoppingTableViewController: UITableViewController {
     
     @objc func addItem(name: String) {
         print("additem")
-        let list = UserShoppingList(name: name, date: Date(), check: false, favorite: false)
+        let list = UserShoppingList(name: name, date: Date(), check: false, favorite: false, photo: "")
         
         try! localRealm.write {
             localRealm.add(list)
@@ -106,6 +104,7 @@ class ShoppingTableViewController: UITableViewController {
     func detailClicked(indexPath: IndexPath) {
         let vc = DetailViewController()
         vc.list = lists[indexPath.row]
+        vc.mainView.titleTextField.text = lists[indexPath.row].name
         navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -32,6 +32,7 @@
 		DE8B44F82888E74D00A45E21 /* TrendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B44F72888E74D00A45E21 /* TrendTableViewController.swift */; };
 		DE8C869828BBA55F0011B835 /* UserShoppingListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C869728BBA55F0011B835 /* UserShoppingListRepository.swift */; };
 		DE8C869A28BBB3370011B835 /* Transition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C869928BBB3370011B835 /* Transition+Extension.swift */; };
+		DE8C869C28BBC1500011B835 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C869B28BBC1500011B835 /* FileManager+Extension.swift */; };
 		DEBC9E4C28856F3F0081690D /* Setting2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC9E4B28856F3F0081690D /* Setting2TableViewController.swift */; };
 		DEBC9E4E2886400C0081690D /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC9E4D2886400C0081690D /* Search.storyboard */; };
 		DEBC9E50288640410081690D /* Trend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC9E4F288640410081690D /* Trend.storyboard */; };
@@ -80,6 +81,7 @@
 		DE8B44F72888E74D00A45E21 /* TrendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewController.swift; sourceTree = "<group>"; };
 		DE8C869728BBA55F0011B835 /* UserShoppingListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserShoppingListRepository.swift; sourceTree = "<group>"; };
 		DE8C869928BBB3370011B835 /* Transition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+Extension.swift"; sourceTree = "<group>"; };
+		DE8C869B28BBC1500011B835 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		DEBC9E4B28856F3F0081690D /* Setting2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting2TableViewController.swift; sourceTree = "<group>"; };
 		DEBC9E4D2886400C0081690D /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		DEBC9E4F288640410081690D /* Trend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trend.storyboard; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				DEBC9E57288645230081690D /* UIViewController+Extension.swift */,
 				DEBC9E59288647850081690D /* UITextField+Extension.swift */,
 				DE8C869928BBB3370011B835 /* Transition+Extension.swift */,
+				DE8C869B28BBC1500011B835 /* FileManager+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				DE8C869A28BBB3370011B835 /* Transition+Extension.swift in Sources */,
 				DE8C869828BBA55F0011B835 /* UserShoppingListRepository.swift in Sources */,
 				DEBC9E58288645230081690D /* UIViewController+Extension.swift in Sources */,
+				DE8C869C28BBC1500011B835 /* FileManager+Extension.swift in Sources */,
 				DE7A23EE28B90D5100505EEE /* DetailViewController.swift in Sources */,
 				DEBC9E6A28878CA30081690D /* Movie.swift in Sources */,
 				DE27838228B65C5800D11E0A /* ImagePickCollectionViewCell.swift in Sources */,

@@ -33,6 +33,8 @@ class DetailViewController: BaseViewController {
     }
     
     override func configure() {
+        mainView.imageView.image = loadImageFromDocument(fileName: "\(list.objectId).jpg")
+        
         let imageButton = UIBarButtonItem(image: UIImage(systemName: "camera.fill"), style: .plain, target: self, action: #selector(selectImageClicked))
         let saveButton = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonClicked))
         navigationItem.rightBarButtonItems = [saveButton, imageButton]
@@ -49,7 +51,11 @@ class DetailViewController: BaseViewController {
             showAlertMessage(title: "제목을 입력해주세요", button: "확인")
             return
         }
-        repository.updateTitle(item: list, title: title)
+        if let image = mainView.imageView.image {
+            saveImageToDocument(fileName: "\(list.objectId).jpg", image: image)
+        }
+        let photo = String(describing: mainView.imageView.image)
+        repository.updateItem(item: list, title: title, photo: photo)
         dismiss(animated: true)
     }
 }

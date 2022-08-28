@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailView: BaseView {
-    
+
     let imageView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(systemName: "camera.fill")
