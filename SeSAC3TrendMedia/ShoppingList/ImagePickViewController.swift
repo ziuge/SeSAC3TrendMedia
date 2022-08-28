@@ -12,6 +12,7 @@ class ImagePickViewController: BaseViewController {
     
     var delegate: SelectImageDelegate?
     var selectImage: UIImage?
+    var selectIndexPath: IndexPath?
     
     let mainView = ImagePickView()
     
@@ -21,7 +22,7 @@ class ImagePickViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+//        view.backgroundColor = .black
     }
     
     override func configure() {
@@ -35,9 +36,7 @@ class ImagePickViewController: BaseViewController {
         let saveButton = UIBarButtonItem(title: "선택", style: .plain, target: self, action: #selector(selectButtonClicked))
         navigationItem.rightBarButtonItem = saveButton
         
-        // 이미지 다운로드 받을 때 아무것도 못하도록 막는 기능들
-        view.isUserInteractionEnabled = false
-//        mainView.collectionView.isUserInteractionEnabled = false
+//        view.isUserInteractionEnabled = false
     }
     
     @objc func closeButtonClicked() {
@@ -67,23 +66,24 @@ extension ImagePickViewController: UICollectionViewDelegate, UICollectionViewDat
             return UICollectionViewCell()
         }
 
+        cell.layer.borderWidth = selectIndexPath == indexPath ? 4 : 0
+        cell.layer.borderColor = selectIndexPath == indexPath ? UIColor.systemRed.cgColor : nil
         cell.setImage(data: ImageDummy.data[indexPath.item].url)
 
         return cell
     }
 
-    // userInteractionEnabled & progress loading 보여주기
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//        // 어떤 셀인지 어떤 이미지를 가지고 올 지 어떻게 알지??
-//        guard let cell = collectionView.cellForItem(at: indexPath) as? ImagePickCollectionViewCell else { return }
-//
-////        selectImage = cell.searchImageView.image
-//
-//        collectionView.reloadData()
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        guard let cell = collectionView.cellForItem(at: indexPath) as? ImagePickCollectionViewCell else { return }
+
+        selectImage = cell.searchImageView.image
+        selectIndexPath = indexPath
+        collectionView.reloadData()
+    }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        selectIndexPath = nil
         selectImage = nil
         collectionView.reloadData()
     }

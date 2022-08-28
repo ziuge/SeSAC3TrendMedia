@@ -11,6 +11,8 @@ class DetailView: BaseView {
     
     let imageView: UIImageView = {
         let view = UIImageView()
+        view.image = UIImage(systemName: "camera.fill")
+        view.tintColor = .systemGray
         view.layer.borderColor = UIColor.systemGray.cgColor
         view.layer.borderWidth = 2
         return view

@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import SwiftUI
 
 protocol SelectImageDelegate {
     func sendImageData(image: UIImage)
@@ -32,7 +33,15 @@ class DetailViewController: BaseViewController {
     }
     
     override func configure() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonClicked))
+        let imageButton = UIBarButtonItem(image: UIImage(systemName: "camera.fill"), style: .plain, target: self, action: #selector(selectImageClicked))
+        let saveButton = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonClicked))
+        navigationItem.rightBarButtonItems = [saveButton, imageButton]
+    }
+    
+    @objc func selectImageClicked() {
+        let vc = ImagePickViewController()
+        vc.delegate = self
+        transition(vc, transitionStyle: .presentFullScreenNavigation)
     }
     
     @objc func saveButtonClicked() {
@@ -40,7 +49,6 @@ class DetailViewController: BaseViewController {
             showAlertMessage(title: "제목을 입력해주세요", button: "확인")
             return
         }
-//        repository.addItem(item: UserShoppingList(name: title, date: Date(), check: false, favorite: false))
         repository.updateTitle(item: list, title: title)
         dismiss(animated: true)
     }
