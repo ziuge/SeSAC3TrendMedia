@@ -7,8 +7,9 @@
 
 import UIKit
 import RealmSwift
+import Zip
 
-class ShoppingTableViewController: UITableViewController {
+class ShoppingTableViewController: UITableViewController, UIDocumentPickerDelegate {
     
     let localRealm = try! Realm()
     
@@ -31,10 +32,62 @@ class ShoppingTableViewController: UITableViewController {
         lists = localRealm.objects(UserShoppingList.self).sorted(byKeyPath: "date", ascending: true)
         
         textBannerView.layer.cornerRadius = 10
+        let backupButton = UIBarButtonItem(title: "백업", style: .plain, target: self, action: #selector(backupButtonClicked))
+        let recoveryButton = UIBarButtonItem(title: "복구", style: .plain, target: self, action: #selector(recoveryButtonClicked))
+        navigationItem.rightBarButtonItems = [recoveryButton, backupButton]
+    }
+    
+    // 백업
+    @objc func backupButtonClicked() {
+        print(#function)
+        var urlPaths = [URL]()
         
-//        print("Realm is located at:", localRealm.configuration.fileURL!)
+        // 도큐먼트 위치에 백업 파일 확인
+        guard let path = documentDirectoryPath() else {
+            showAlert(alertTitle: "도큐먼트 위치에 오류가 있습니다")
+            return
+        }
+        
+        let realmFile = path.appendingPathComponent("default.realm")
+        
+        guard FileManager.default.fileExists(atPath: realmFile.path) else {
+            showAlert(alertTitle: "백업할 파일이 없습니다")
+            return
+        }
+        
+        urlPaths.append(URL(string: realmFile.path)!)
+        
+        // 백업 파일을 압축 : URL
+        do {
+            let zipFilePath = try Zip.quickZipFiles(urlPaths, fileName: "SeSACShoppingList_1")
+            print("Archive location: \(zipFilePath)")
+            showActivityViewController()
+        } catch {
+            showAlert(alertTitle: "압축에 실패했습니다", alertMessage: "")
+        }
         
     }
+    
+    func showActivityViewController() {
+        print(#function)
+        // 도큐먼트 위치에 백업 파일 확인
+        guard let path = documentDirectoryPath() else {
+            showAlert(alertTitle: "도큐먼트 위치에 오류가 있습니다", alertMessage: "")
+            return
+        }
+        let backupFileURL = path.appendingPathComponent("SeSACShoppingList_1.zip")
+        let vc = UIActivityViewController(activityItems: [backupFileURL], applicationActivities: [])
+        self.present(vc, animated: true)
+    }
+    
+    @objc func recoveryButtonClicked() {
+        print(#function)
+        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.archive], asCopy: true)
+        documentPicker.delegate = self
+        documentPicker.allowsMultipleSelection = false
+        self.present(documentPicker, animated: true)
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -108,7 +161,8 @@ class ShoppingTableViewController: UITableViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    // MARK: - Table view data source
+
+// MARK: - TableView Delegate, DataSource
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return lists.count
@@ -130,13 +184,12 @@ class ShoppingTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let favorite = UIContextualAction(style: .normal, title: nil) { action, view, completionHandler in
-            
+
             // realm data update
             try! self.localRealm.write {
                 // 하나의 레코드에서 특정 컬럼 하나만 변경
                 self.lists[indexPath.row].favorite = !self.lists[indexPath.row].favorite
             }
-            
             self.fetchRealm()
         }
         
@@ -149,11 +202,9 @@ class ShoppingTableViewController: UITableViewController {
             let vc = ImagePickViewController()
             self.present(vc, animated: true)
         }
-        
         pickImage.image = UIImage(systemName: "camera.fill")
         
         return UISwipeActionsConfiguration(actions: [favorite, pickImage])
-        
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -174,12 +225,59 @@ class ShoppingTableViewController: UITableViewController {
             }
             self.fetchRealm()
         }
-        
         delete.image = UIImage(systemName: "trash")
         edit.image = UIImage(systemName: "pencil")
-        
-        
+
         return UISwipeActionsConfiguration(actions: [edit, delete])
     }
 
+
+// MARK: - UIDocumentPickerDelegate
+    
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        print(#function)
+    }
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        print(#function)
+        guard let selectedFileURL = urls.first else {
+            showAlert(alertTitle: "선택하신 파일을 찾을 수 없습니다")
+            return
+        }
+        guard let path = documentDirectoryPath() else {
+            showAlert(alertTitle: "도큐먼트 위치에 오류가 있습니다")
+            return
+        }
+        
+        let sandboxFileURL = path.appendingPathComponent(selectedFileURL.lastPathComponent)
+        
+        if FileManager.default.fileExists(atPath: sandboxFileURL.path) {
+            let fileURL = path.appendingPathComponent("SeSACShoppingList_1.zip")
+
+            do {
+                try Zip.unzipFile(fileURL, destination: path, overwrite: true, password: nil, progress: { progress in
+                    print("progress: \(progress)")
+                }, fileOutputHandler: { unzippedFile in
+                    print("unzippedFile: \(unzippedFile)")
+                    self.showAlert(alertTitle: "복구가 완료되었습니다")
+                })
+            } catch {
+                showAlert(alertTitle: "압축 해제에 실패했습니다")
+            }
+        } else {
+            do {
+                // 파일 앱의 zip -> 도큐먼트 폴더에 복사
+                try FileManager.default.copyItem(at: selectedFileURL, to: sandboxFileURL)
+                let fileURL = path.appendingPathComponent("SeSACShoppingList_1.zip")
+                try Zip.unzipFile(fileURL, destination: path, overwrite: true, password: nil, progress: { progress in
+                    print("progress: \(progress)")
+                }, fileOutputHandler: { unzippedFile in
+                    print("unzippedFile: \(unzippedFile)")
+                    self.showAlert(alertTitle: "복구가 완료되었습니다")
+                })
+            } catch {
+                showAlert(alertTitle: "압축 해제에 실패했습니다")
+            }
+        }
+    }
 }

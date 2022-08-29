@@ -12,10 +12,11 @@ extension UIViewController {
         view.backgroundColor = .orange
     }
     
-    func showAlert(alertTitle: String, alertMessage: String) {
+    func showAlert(alertTitle: String, alertMessage: String = "") {
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         let ok = UIAlertAction(title: "ok", style: .default)
         alert.addAction(ok)
         present(alert, animated: true)
     }
+    
 }

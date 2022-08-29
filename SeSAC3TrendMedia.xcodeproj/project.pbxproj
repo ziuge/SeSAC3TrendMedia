@@ -27,6 +27,7 @@
 		DE27838C28B65CE500D11E0A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27838B28B65CE500D11E0A /* BaseViewController.swift */; };
 		DE27838E28B65D2D00D11E0A /* ImagePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27838D28B65D2D00D11E0A /* ImagePickView.swift */; };
 		DE27839028B67FB200D11E0A /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27838F28B67FB200D11E0A /* Images.swift */; };
+		DE2E1F5028BC8E7B0053FED0 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = DE2E1F4F28BC8E7B0053FED0 /* Zip */; };
 		DE7A23EE28B90D5100505EEE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7A23ED28B90D5100505EEE /* DetailViewController.swift */; };
 		DE7A23F028B90D7100505EEE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7A23EF28B90D7100505EEE /* DetailView.swift */; };
 		DE8B44F82888E74D00A45E21 /* TrendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B44F72888E74D00A45E21 /* TrendTableViewController.swift */; };
@@ -108,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE2E1F5028BC8E7B0053FED0 /* Zip in Frameworks */,
 				DE038DAF28B39C25002B1181 /* RealmSwift in Frameworks */,
 				DE038DAD28B39C25002B1181 /* Realm in Frameworks */,
 				DEBC9E792887AE810081690D /* Toast in Frameworks */,
@@ -148,11 +150,11 @@
 				DEBC9E6F28879AB00081690D /* Trend */,
 				DEBC9E51288640740081690D /* Intro.storyboard */,
 				DE27837D28B65B6000D11E0A /* Extension */,
+				DE27838328B65C9200D11E0A /* Base */,
 				DE27837E28B65B6B00D11E0A /* ShoppingList */,
 				DE12FFF22884EC4800F57742 /* Assets.xcassets */,
 				DE12FFF42884EC4800F57742 /* LaunchScreen.storyboard */,
 				DE12FFF72884EC4800F57742 /* Info.plist */,
-				DE27838328B65C9200D11E0A /* Base */,
 			);
 			path = SeSAC3TrendMedia;
 			sourceTree = "<group>";
@@ -255,6 +257,7 @@
 				DE038DAC28B39C25002B1181 /* Realm */,
 				DE038DAE28B39C25002B1181 /* RealmSwift */,
 				DE27838928B65CD000D11E0A /* SnapKit */,
+				DE2E1F4F28BC8E7B0053FED0 /* Zip */,
 			);
 			productName = SeSAC3TrendMedia;
 			productReference = DE12FFE62884EC4300F57742 /* SeSAC3TrendMedia.app */;
@@ -289,6 +292,7 @@
 				DEBC9E772887AE810081690D /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				DE038DAB28B39C24002B1181 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				DE27838828B65CD000D11E0A /* XCRemoteSwiftPackageReference "SnapKit" */,
+				DE2E1F4E28BC8E7B0053FED0 /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = DE12FFE72884EC4300F57742 /* Products */;
 			projectDirPath = "";
@@ -589,6 +593,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		DE2E1F4E28BC8E7B0053FED0 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		DEBC9E742887AE740081690D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -622,6 +634,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DE27838828B65CD000D11E0A /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		DE2E1F4F28BC8E7B0053FED0 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE2E1F4E28BC8E7B0053FED0 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
 		};
 		DEBC9E752887AE740081690D /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
